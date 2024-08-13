@@ -7,12 +7,12 @@ const Login = () => {
 
 
   const handleClick = async () => {
-    const redirectTo = encodeURIComponent("http://localhost:5173/"); 
+    const redirectTo = encodeURIComponent("http://localhost:5173/landing"); 
     const googleLoginUrl = `https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=${redirectTo}`;
 
     window.location.href = googleLoginUrl;
   };
-  const urlparam=window.URLSearchParams();
+  const urlparam= new window.URLSearchParams();
   const token= urlparam.get('token')
   if(token){
     localStorage.setItem(token);
