@@ -5,16 +5,20 @@ import axios from 'axios';
 
 const Login = () => {
 
-    const handleClick = async (e) =>{
-        // console.log("Google clicked !!");
-        // Example using fetch
-            fetch('/api/v1/auth/google-login')
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.error('Error:', error));
 
-        
-    }
+  const handleClick = async () => {
+    const redirectTo = encodeURIComponent("http://localhost:5173/"); 
+    const googleLoginUrl = `https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=${redirectTo}`;
+
+    window.location.href = googleLoginUrl;
+  };
+  const urlparam=window.URLSearchParams();
+  const token= urlparam.get('token')
+  if(token){
+    localStorage.setItem(token);
+    //now u can make calls
+    
+  }
 
   return (
     <div className='min-h-[759px] w-[1440px] bg-black flex-row'>
