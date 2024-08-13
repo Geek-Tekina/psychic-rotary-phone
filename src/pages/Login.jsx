@@ -8,7 +8,7 @@ const Login = () => {
     const handleClick = async (e) =>{
         // console.log("Google clicked !!");
         // Example using fetch
-            fetch('/api/v1/onebox/list')
+            fetch('/api/v1/auth/google-login')
             .then(response => response.json())
             .then(data => console.log(data))
             .catch(error => console.error('Error:', error));
